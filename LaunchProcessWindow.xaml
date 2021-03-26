@@ -1,0 +1,31 @@
+﻿<Window x:Class="MiniTaskManager.LaunchProcessWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiniTaskManager"
+        mc:Ignorable="d"
+        Title="Launch a new process" Height="150" Width="400"
+        ResizeMode="NoResize" Closing="Window_Closing">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Process Name" Grid.Column="1" Grid.Row="1" >
+            <StackPanel>
+                <TextBox x:Name="ProcessNameTextBox" Margin="4">
+                </TextBox>
+                <StackPanel Orientation="Horizontal"  FlowDirection="RightToLeft">
+                    <Button x:Name="RunByProcessName" Margin="4" MinWidth="50" Content="Run" Click="RunByProcessName_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>
