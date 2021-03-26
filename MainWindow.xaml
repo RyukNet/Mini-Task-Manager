@@ -14,22 +14,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <!--<ListBox x:Name="listBox" Grid.Column="0" Grid.Row="0"
-                 ItemsSource="{Binding processes}" Grid.IsSharedSizeScope="True">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid ShowGridLines="True">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="{Binding Id}"/>
-                        <TextBlock Grid.Column="1" Text="{Binding ProcessName}"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>-->
-        <DataGrid x:Name="listBox" Grid.Column="0" Grid.Row="0"
+        <DataGrid x:Name="dataGrid" Grid.Column="0" Grid.Row="0"
                   ItemsSource="{Binding processes}" AutoGenerateColumns="False"
                   IsTextSearchEnabled="True" CanUserAddRows="False"
                   SelectionMode="Single" Margin="2,0,-2,0" BorderThickness="1,1,0,0">
@@ -48,7 +33,8 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <Button x:Name="NewProcessButton" Content="New Process"  Grid.Column="0" Grid.Row="0" Click="NewProcessButton_Click" />
-            <Button x:Name="EndProcessButton" Content="End Process" Grid.Column="2" Grid.Row="0" Click="endProcess"/>
+            <Button x:Name="EndProcessButton" Content="End Process" Grid.Column="2" Grid.Row="0" 
+                    Click="endProcess" IsEnabled="{Binding ElementName=dataGrid, Path=SelectedItems.Count}"/>
 
         </Grid>
     </Grid>

@@ -19,7 +19,7 @@ namespace MiniTaskManager
 
         private void endProcess(object sender, RoutedEventArgs e)
         {
-            var listBoxItem = listBox.SelectedItem;
+            var listBoxItem = dataGrid.SelectedItem;
             Process process;
             process = (Process)listBoxItem;
             try
@@ -31,7 +31,7 @@ namespace MiniTaskManager
             {
                 MessageBox.Show(ex.ToString());
             }
-            MessageBox.Show(process.ProcessName + " Kiled succefully");
+            MessageBox.Show(process.ProcessName + " ended succefully");
         }
 
         private void NewProcessButton_Click(object sender, RoutedEventArgs e)
